@@ -1,0 +1,16 @@
+export const java = require("./java.jpg");
+export const python = require("./python.jpg");
+export const c = require("./c.jpg");
+export const javascript = require("./javascript.jpg");
+export const jobs = require("./jobs.jpg");
+export const benjamin = require("./benjamin.jpg");
+export const apj = require("./apj.jpg");
+export const anne = require("./annefrank.jpg");
+export const archer = require("./archer.jpg");
+export const alchemist = require("./alchemist.jpg");
+export const sherlock = require("./sherlock.jpg");
+export const dark = require("./dark.jpg");
+export const stephen = require("./stephen.jpg");
+export const brief = require("./brief.jpg");
+export const blackholes = require("./blackholes.jpg");
+export const unlock = require("./unlock.jpg");

@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 .App{
   text-align: center;
+  font-family: 'DM Sans',
+  sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0;
 }
 :root{
-  --green-custom:#65a30d;
+  --green-custom:#15803d;
+  --rating-color:#94a3b8
+
+
+;
 }
 .App-header{
   margin: 2rem 1rem;
@@ -13,37 +23,64 @@
 }
 .buttons{
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  text-align: justify;
+  margin: auto;
 }
 .buttons-type{
+  text-align: center;
   cursor: pointer;
   margin: auto 0.5rem;
   padding: 0.5rem;
   background-color: var(--green-custom);
   color: white;
-  font-size: 1rem;
   outline: none;
   outline-style: none;
   border-radius: 0.2rem;
   border-style: none;
 }
 .book-list-container{
-  max-width: 600px;
+  max-width: 500px;
   margin: auto;
-  text-align: start;
-}
-ul{
   text-align: center;
-  width: 100%;
+}
+ul {
+  text-align: center;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 .book-details{
-  border: 1px solid gray;
-  width: 100%;
+  display: flex;
+  border: 1px solid #d1d5db;
   border-radius: 0.5rem;
-  padding: 1.5rem 0;
   margin: 1.5rem 0;
+}
+.image-container{
+  max-width:140px;
+  padding: .5rem;
+  text-align: center;
+}
+.book-description{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+  padding:2rem 0 2rem  2rem;
+}
+.buy{
+  color: white;
+  background-color: var(--green-custom);
+  outline-style: none;
+  border-style: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: .7rem;
+}
+.book-rating{
+  color: white;
+  background-color: var(--rating-color);
+  border-radius: .5rem;
+  padding: .3rem;
+  font-size: x-small;
 }
