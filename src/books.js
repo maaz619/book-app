@@ -24,6 +24,7 @@ export const defaults = {
       auth: "Marijn Haverbeke",
       rating: "4.5/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "Steve Jobs: The Exclusive Biography",
@@ -31,6 +32,7 @@ export const defaults = {
       auth: "Walter Isaacson ",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "A Brief History Of Time: From Big Bang To Black Holes",
@@ -38,6 +40,7 @@ export const defaults = {
       auth: "Stephen Hawking ",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "The Complete Novels of Sherlock Holmes",
@@ -45,11 +48,12 @@ export const defaults = {
       auth: "Arthur Conan Doyle",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
   ],
 };
 
-export const data = {
+export const bookData = {
   Programming: [
     {
       name: "Eloquent JS",
@@ -57,6 +61,7 @@ export const data = {
       auth: "Marijn Haverbeke",
       rating: "4.5/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "C language",
@@ -64,6 +69,7 @@ export const data = {
       auth: "Darrel L. Graham",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "Java",
@@ -71,6 +77,7 @@ export const data = {
       auth: "E Balagurusami",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "Python",
@@ -78,6 +85,7 @@ export const data = {
       auth: "Ike Beck",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
   ],
   Biography: [
@@ -87,6 +95,7 @@ export const data = {
       auth: "Benjamin Franklin",
       rating: "4.5/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "The Diary of a Young Girl",
@@ -94,6 +103,7 @@ export const data = {
       auth: "Anne Frank",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "Wings of Fire: An Autobiography of Abdul Kalam",
@@ -101,6 +111,7 @@ export const data = {
       auth: " A. P. J. Abdul Kalam ",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "Steve Jobs: The Exclusive Biography",
@@ -108,6 +119,7 @@ export const data = {
       auth: "Walter Isaacson ",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
   ],
   Science: [
@@ -117,6 +129,7 @@ export const data = {
       auth: "Stephen Hawking ",
       rating: "4.5/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "The Theory of Everything: The Origin and Fate of the Universe",
@@ -124,6 +137,7 @@ export const data = {
       auth: "Stephen Hawking ",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "Black Holes: The Reith Lectures",
@@ -131,6 +145,7 @@ export const data = {
       auth: "Stephen Hawking ",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "A Brief History Of Time: From Big Bang To Black Holes",
@@ -138,6 +153,7 @@ export const data = {
       auth: "Stephen Hawking ",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
   ],
   Fiction: [
@@ -147,6 +163,7 @@ export const data = {
       auth: "Stephen Hawking",
       rating: "4.5/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "The Complete Novels of Sherlock Holmes",
@@ -154,6 +171,7 @@ export const data = {
       auth: "Arthur Conan Doyle",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "The Alchemist",
@@ -161,6 +179,7 @@ export const data = {
       auth: "Paulo Coelho ",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
     {
       name: "The Archer",
@@ -168,6 +187,7 @@ export const data = {
       auth: "Paulo Coelho ",
       rating: "4/5",
       buy_link: "gdjjdgj",
+      price: 2500,
     },
   ],
 };

@@ -1,18 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 .App{
   text-align: center;
-  font-family: 'DM Sans',
-  sans-serif;
-}
-h1,h2,h3,h4,h5,h6,p{
-  margin: 0;
-}
-:root{
-  --green-custom:#15803d;
-  --rating-color:#94a3b8
-
-
-;
 }
 .App-header{
   margin: 2rem 1rem;
