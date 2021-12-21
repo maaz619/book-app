@@ -70,29 +70,29 @@ const App = () => {
           >
             {bookType}
           </h2>
-          {bookInfo.map((i, key) => {
+          {bookInfo.map((product, key) => {
             return (
               <li key={key} className="book-details">
                 {" "}
                 <div className="image-container">
-                  <img src={i.img_URL} alt="" />{" "}
+                  <img src={product.img_URL} alt="" />{" "}
                 </div>
                 <div className="book-description">
                   <div>
                     <p style={{ fontSize: "largeer", fontWeight: "600" }}>
-                      {i.name}
+                      {product.name}
                     </p>
-                    <small style={{ padding: "10px 0" }}>{i.auth}</small>
+                    <small style={{ padding: "10px 0" }}>{product.auth}</small>
                   </div>
                   <p>
                     <strong>Rating: </strong>
-                    <span className="book-rating">{i.rating}</span>
+                    <span className="book-rating">{product.rating}</span>
                   </p>
 
-                  <Link to="product">
+                  <Link to={{ pathname: "/product" }} state={product}>
                     <button
                       onClick={() => {
-                        handlePropsData(i);
+                        handlePropsData(product);
                       }}
                       className="buy"
                     >
