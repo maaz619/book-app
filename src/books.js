@@ -16,6 +16,7 @@ import {
   brief,
   blackholes,
 } from "./images/index";
+
 export const defaults = {
   Recommendations: [
     {
@@ -25,6 +26,8 @@ export const defaults = {
       rating: "4.5/5",
       buy_link: "gdjjdgj",
       price: 2500,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "Steve Jobs: The Exclusive Biography",
@@ -32,7 +35,9 @@ export const defaults = {
       auth: "Walter Isaacson ",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 150,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "A Brief History Of Time: From Big Bang To Black Holes",
@@ -40,7 +45,9 @@ export const defaults = {
       auth: "Stephen Hawking ",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 180,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "The Complete Novels of Sherlock Holmes",
@@ -48,7 +55,9 @@ export const defaults = {
       auth: "Arthur Conan Doyle",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 140,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
   ],
 };
@@ -62,6 +71,8 @@ export const bookData = {
       rating: "4.5/5",
       buy_link: "gdjjdgj",
       price: 2500,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "C language",
@@ -69,7 +80,9 @@ export const bookData = {
       auth: "Darrel L. Graham",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 230,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "Java",
@@ -77,7 +90,9 @@ export const bookData = {
       auth: "E Balagurusami",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 400,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "Python",
@@ -85,7 +100,9 @@ export const bookData = {
       auth: "Ike Beck",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 350,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
   ],
   Biography: [
@@ -95,7 +112,9 @@ export const bookData = {
       auth: "Benjamin Franklin",
       rating: "4.5/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 130,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "The Diary of a Young Girl",
@@ -103,7 +122,9 @@ export const bookData = {
       auth: "Anne Frank",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 120,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "Wings of Fire: An Autobiography of Abdul Kalam",
@@ -111,7 +132,9 @@ export const bookData = {
       auth: " A. P. J. Abdul Kalam ",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 150,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "Steve Jobs: The Exclusive Biography",
@@ -119,7 +142,9 @@ export const bookData = {
       auth: "Walter Isaacson ",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 190,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
   ],
   Science: [
@@ -129,7 +154,9 @@ export const bookData = {
       auth: "Stephen Hawking ",
       rating: "4.5/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 160,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "The Theory of Everything: The Origin and Fate of the Universe",
@@ -137,7 +164,9 @@ export const bookData = {
       auth: "Stephen Hawking ",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 210,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "Black Holes: The Reith Lectures",
@@ -145,7 +174,9 @@ export const bookData = {
       auth: "Stephen Hawking ",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 260,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "A Brief History Of Time: From Big Bang To Black Holes",
@@ -153,7 +184,9 @@ export const bookData = {
       auth: "Stephen Hawking ",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 140,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
   ],
   Fiction: [
@@ -163,7 +196,9 @@ export const bookData = {
       auth: "Stephen Hawking",
       rating: "4.5/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 130,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "The Complete Novels of Sherlock Holmes",
@@ -171,7 +206,9 @@ export const bookData = {
       auth: "Arthur Conan Doyle",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 140,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "The Alchemist",
@@ -179,7 +216,9 @@ export const bookData = {
       auth: "Paulo Coelho ",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 170,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
     {
       name: "The Archer",
@@ -187,7 +226,9 @@ export const bookData = {
       auth: "Paulo Coelho ",
       rating: "4/5",
       buy_link: "gdjjdgj",
-      price: 2500,
+      price: 300,
+      description:
+        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
   ],
 };
