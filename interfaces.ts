@@ -1,4 +1,4 @@
-interface bookTypes {
+export interface Book {
   name: string;
   img_URL: any;
   auth: string;
@@ -7,17 +7,17 @@ interface bookTypes {
   price: number;
   description: string;
 }
-interface titleType {
+export interface Title {
   Recommendations: string;
   Programming: string;
   Biography: string;
   Science: string;
   Fiction: string;
 }
-export default interface types {
-  Recommendations?: bookTypes[];
-  Programming?: bookTypes[];
-  Biography?: bookTypes[];
-  Science?: bookTypes[];
-  Fiction?: bookTypes[];
+export interface Books {
+  Recommendations: Book[];
+  Programming?: Book[];
+  Biography: Book[];
+  Science: Book[];
+  Fiction: Book[];
 }

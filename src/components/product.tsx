@@ -2,10 +2,11 @@
 import "./styles/product.css";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-
+import React from "react";
+import { Book } from "../../interfaces";
 const Product = () => {
   const [quantity, setQuantity] = useState(1);
-  const { state } = useLocation();
+  const state = useLocation().state as Book;
 
   const handleQuantityChange = (e) => {
     let currentQuantity = e.target.value;

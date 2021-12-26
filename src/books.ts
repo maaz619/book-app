@@ -16,9 +16,8 @@ import {
   brief,
   blackholes,
 } from "./images/index";
-import types from "../interfaces";
-
-export const defaults: types = {
+import { Books } from "../interfaces";
+export const books: Books = {
   Recommendations: [
     {
       name: "Eloquent JS",
@@ -60,11 +59,6 @@ export const defaults: types = {
       description:
         "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
-  ],
-};
-
-export const bookData: types = {
-  Programming: [
     {
       name: "Eloquent JS",
       img_URL: javascript,
