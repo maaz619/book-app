@@ -3,27 +3,26 @@ import "./App.css";
 import { bookData, defaults } from "./books";
 import { useState, useEffect } from "react";
 import Product from "./components/product";
+import types from "../interfaces";
+import React from "react";
 
-const App = () => {
+const App: React.FC = (): JSX.Element => {
   const [propsData, setPropsData] = useState({});
-  const [bookInfo, setBookInfo] = useState([]);
-  const [bookType, setBookType] = useState();
+  const [bookInfo, setBookInfo] = useState<types<void>[]>([]);
+  const [bookType, setBookType] = useState<string>();
   const myData = { ...bookData };
 
   // const stateToProps = (bookDetails) => {
   //   <Product newData={bookDetails} />;
   //   console.log(bookInfo);
   // };
-  const handlePropsData = (i) => {
+  const handlePropsData = (i: any) => {
     const current = i;
     setPropsData(current);
   };
-  if (Object.keys(propsData).length !== 0) {
-    console.log(propsData);
-    <Product data="hello" />;
-  }
 
-  const clickHandler = (type) => {
+  const clickHandler = (type: string) => {
+    console.log(type);
     setBookInfo([...myData[type]]);
     setBookType(type);
   };
@@ -35,29 +34,22 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      {/* <button
-        onClick={(e) => {
-          handlePropsData();
-        }}
-      >
-        hello
-      </button> */}
       <header className="App-header">
         <h1>
           Good <span className="header-text">read</span>
         </h1>
       </header>
       <div className="buttons">
-        {Object.keys(myData).map((i, key) => {
+        {Object.keys(myData).map((type, key) => {
           return (
             <button
               onClick={() => {
-                clickHandler(i);
+                clickHandler(type);
               }}
               key={key}
               className="buttons-type"
             >
-              {i}
+              {type}
             </button>
           );
         })}
@@ -75,7 +67,7 @@ const App = () => {
               <li key={key} className="book-details">
                 {" "}
                 <div className="image-container">
-                  <img src={product.img_URL} alt="" />{" "}
+                  <img src={product.Biography.img_URL} alt="" />{" "}
                 </div>
                 <div className="book-description">
                   <div>

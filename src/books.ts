@@ -16,8 +16,9 @@ import {
   brief,
   blackholes,
 } from "./images/index";
+import types from "../interfaces";
 
-export const defaults = {
+export const defaults: types = {
   Recommendations: [
     {
       name: "Eloquent JS",
@@ -62,7 +63,7 @@ export const defaults = {
   ],
 };
 
-export const bookData = {
+export const bookData: types = {
   Programming: [
     {
       name: "Eloquent JS",
