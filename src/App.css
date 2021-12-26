@@ -11,13 +11,13 @@
 .buttons{
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
 }
 .buttons-type{
   text-align: center;
   cursor: pointer;
-  margin: auto 0.5rem;
+  margin: auto .5rem;
   padding: 0.5rem;
   background-color: var(--green-custom);
   color: white;

@@ -34,22 +34,23 @@ const App: React.FC = (): JSX.Element => {
           Good <span className="header-text">read</span>
         </h1>
       </header>
-      <div className="buttons">
-        {Object.keys(myData).map((type, key) => {
-          return type !== "Recommendations" ? (
-            <button
-              onClick={() => {
-                clickHandler(type);
-              }}
-              key={key}
-              className="buttons-type"
-            >
-              {type}
-            </button>
-          ) : null;
-        })}
-      </div>
+
       <main className="book-list-container">
+        <div className="buttons">
+          {Object.keys(myData).map((type, key) => {
+            return type !== "Recommendations" ? (
+              <button
+                onClick={() => {
+                  clickHandler(type);
+                }}
+                key={key}
+                className="buttons-type"
+              >
+                {type}
+              </button>
+            ) : null;
+          })}
+        </div>
         <ul className="book-list-container">
           <h2
             style={{ textAlign: "start", padding: "1rem" }}
