@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./App.css";
 import { books } from "./books";
 import { useState, useEffect } from "react";
+import Product from "./components/product";
 import { Book } from "../interfaces";
 import React from "react";
 
@@ -35,7 +36,7 @@ const App: React.FC = (): JSX.Element => {
       </header>
       <div className="buttons">
         {Object.keys(myData).map((type, key) => {
-          return (
+          return type !== "Recommendations" ? (
             <button
               onClick={() => {
                 clickHandler(type);
@@ -45,7 +46,7 @@ const App: React.FC = (): JSX.Element => {
             >
               {type}
             </button>
-          );
+          ) : null;
         })}
       </div>
       <main className="book-list-container">
