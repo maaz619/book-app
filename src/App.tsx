@@ -1,25 +1,20 @@
 import { Link } from "react-router-dom";
 import "./App.css";
-import { bookData, defaults } from "./books";
+import { books } from "./books";
 import { useState, useEffect } from "react";
 import Product from "./components/product";
-import types from "../interfaces";
+import {Book} from "../interfaces";
 import React from "react";
 
 const App: React.FC = (): JSX.Element => {
-  const [propsData, setPropsData] = useState({});
-  const [bookInfo, setBookInfo] = useState<types<void>[]>([]);
+  const [bookInfo, setBookInfo] = useState<Book[]>([]);
   const [bookType, setBookType] = useState<string>();
-  const myData = { ...bookData };
+  const myData = { ...books };
 
   // const stateToProps = (bookDetails) => {
   //   <Product newData={bookDetails} />;
   //   console.log(bookInfo);
   // };
-  const handlePropsData = (i: any) => {
-    const current = i;
-    setPropsData(current);
-  };
 
   const clickHandler = (type: string) => {
     console.log(type);
@@ -28,8 +23,8 @@ const App: React.FC = (): JSX.Element => {
   };
 
   useEffect(() => {
-    setBookInfo([...defaults.Recommendations]);
-    setBookType(Object.keys(defaults)[0]);
+    setBookInfo([...books.Recommendations]);
+    setBookType(Object.keys(books)[0]);
     // handlePropsData(propsData);
   }, []);
   return (
@@ -67,7 +62,7 @@ const App: React.FC = (): JSX.Element => {
               <li key={key} className="book-details">
                 {" "}
                 <div className="image-container">
-                  <img src={product.Biography.img_URL} alt="" />{" "}
+                  <img src={product.img_URL} alt="" />{" "}
                 </div>
                 <div className="book-description">
                   <div>
@@ -83,9 +78,6 @@ const App: React.FC = (): JSX.Element => {
 
                   <Link to={{ pathname: "/product" }} state={product}>
                     <button
-                      onClick={() => {
-                        handlePropsData(product);
-                      }}
                       className="buy"
                     >
                       Buy
