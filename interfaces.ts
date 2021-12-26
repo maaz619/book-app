@@ -16,7 +16,7 @@ export interface Title {
 }
 export interface Books {
   Recommendations: Book[];
-  Programming?: Book[];
+  Programming: Book[];
   Biography: Book[];
   Science: Book[];
   Fiction: Book[];

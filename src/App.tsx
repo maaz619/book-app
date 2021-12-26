@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import "./App.css";
 import { books } from "./books";
 import { useState, useEffect } from "react";
-import Product from "./components/product";
-import {Book} from "../interfaces";
+import { Book } from "../interfaces";
 import React from "react";
 
 const App: React.FC = (): JSX.Element => {
@@ -77,11 +76,7 @@ const App: React.FC = (): JSX.Element => {
                   </p>
 
                   <Link to={{ pathname: "/product" }} state={product}>
-                    <button
-                      className="buy"
-                    >
-                      Buy
-                    </button>
+                    <button className="buy">Buy</button>
                   </Link>
                 </div>
               </li>

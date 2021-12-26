@@ -59,6 +59,8 @@ export const books: Books = {
       description:
         "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
     },
+  ],
+  Programming: [
     {
       name: "Eloquent JS",
       img_URL: javascript,
