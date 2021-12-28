@@ -27,7 +27,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 2500,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "Steve Jobs: The Exclusive Biography",
@@ -37,7 +37,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 150,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "A Brief History Of Time: From Big Bang To Black Holes",
@@ -47,7 +47,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 180,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "The Complete Novels of Sherlock Holmes",
@@ -57,7 +57,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 140,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
   ],
   Programming: [
@@ -69,7 +69,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 2500,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "C language",
@@ -79,7 +79,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 230,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "Java",
@@ -89,7 +89,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 400,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "Python",
@@ -99,7 +99,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 350,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
   ],
   Biography: [
@@ -111,7 +111,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 130,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "The Diary of a Young Girl",
@@ -121,7 +121,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 120,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "Wings of Fire: An Autobiography of Abdul Kalam",
@@ -131,7 +131,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 150,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "Steve Jobs: The Exclusive Biography",
@@ -141,7 +141,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 190,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
   ],
   Science: [
@@ -153,7 +153,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 160,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "The Theory of Everything: The Origin and Fate of the Universe",
@@ -163,7 +163,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 210,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "Black Holes: The Reith Lectures",
@@ -173,7 +173,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 260,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "A Brief History Of Time: From Big Bang To Black Holes",
@@ -183,7 +183,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 140,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
   ],
   Fiction: [
@@ -195,7 +195,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 130,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "The Complete Novels of Sherlock Holmes",
@@ -205,7 +205,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 140,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "The Alchemist",
@@ -215,7 +215,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 170,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
     {
       name: "The Archer",
@@ -225,7 +225,7 @@ export const books: Books = {
       buy_link: "gdjjdgj",
       price: 300,
       description:
-        "This book is flana dimkana nad is good book. A book about Lorem Ipsum are nothing more. Fuck you btw",
+        "Note: If you're using this it may mean you're doing some of your own routing in your app, and we'd like to know what your use case is. We may be able to provide something higher-level to better suit your needs.",
     },
   ],
 };
