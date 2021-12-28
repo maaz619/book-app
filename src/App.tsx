@@ -2,14 +2,20 @@ import { Link } from "react-router-dom";
 import "./App.css";
 import { books } from "./books";
 import { useState, useEffect } from "react";
-import Product from "./components/product";
 import { Book } from "../interfaces";
 import React from "react";
+import "react-loading-skeleton/dist/skeleton.css";
+import Skeleton from "react-loading-skeleton";
 
 const App: React.FC = (): JSX.Element => {
+  const [loaded, setLoaded] = useState<boolean>(false);
   const [bookInfo, setBookInfo] = useState<Book[]>([]);
   const [bookType, setBookType] = useState<string>();
   const myData = { ...books };
+
+  const skeletonTimer = () => {
+    setTimeout(() => setLoaded(true), 3000);
+  };
 
   // const stateToProps = (bookDetails) => {
   //   <Product newData={bookDetails} />;
@@ -17,12 +23,13 @@ const App: React.FC = (): JSX.Element => {
   // };
 
   const clickHandler = (type: string) => {
-    console.log(type);
     setBookInfo([...myData[type]]);
     setBookType(type);
+    skeletonTimer();
   };
 
   useEffect(() => {
+    skeletonTimer();
     setBookInfo([...books.Recommendations]);
     setBookType(Object.keys(books)[0]);
     // handlePropsData(propsData);
@@ -53,7 +60,7 @@ const App: React.FC = (): JSX.Element => {
         </div>
         <ul className="book-list-container">
           <h2
-            style={{ textAlign: "start", padding: "1rem" }}
+            style={{ textAlign: "start", padding: "2rem 1rem 0 1rem" }}
             className="header-text"
           >
             {bookType}
@@ -61,20 +68,36 @@ const App: React.FC = (): JSX.Element => {
           {bookInfo.map((product, key) => {
             return (
               <li key={key} className="book-details">
-                {" "}
-                <div className="image-container">
-                  <img src={product.img_URL} alt="" />{" "}
-                </div>
-                <div className="book-description">
-                  <div>
-                    <p style={{ fontSize: "largeer", fontWeight: "600" }}>
-                      {product.name}
-                    </p>
-                    <small style={{ padding: "10px 0" }}>{product.auth}</small>
+                {loaded ? (
+                  <div className="image-container">
+                    <img src={product.img_URL} alt="" />
                   </div>
+                ) : (
+                  <div style={{ width: "150px" }} className="image-container">
+                    <Skeleton height={200} />
+                  </div>
+                )}
+                <div className="book-description">
+                  {loaded ? (
+                    <div>
+                      <p style={{ fontSize: "larger", fontWeight: "600" }}>
+                        {product.name}
+                      </p>
+
+                      <small style={{ padding: "10px 0" }}>
+                        {product.auth}
+                      </small>
+                    </div>
+                  ) : (
+                    <Skeleton width={150} height={50} />
+                  )}
                   <p>
                     <strong>Rating: </strong>
-                    <span className="book-rating">{product.rating}</span>
+                    {loaded ? (
+                      <span className="book-rating">{product.rating}</span>
+                    ) : (
+                      <Skeleton height={25} width={60} />
+                    )}
                   </p>
 
                   <Link to={{ pathname: "/product" }} state={product}>

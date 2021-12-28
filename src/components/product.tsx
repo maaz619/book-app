@@ -1,19 +1,31 @@
 // import { Link } from "react-router-dom"
 import "./styles/product.css";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import { Book } from "../../interfaces";
+import Address from "./address";
+import Skeleton from "react-loading-skeleton";
 const Product = () => {
   const [quantity, setQuantity] = useState(1);
+  const [loaded, setLoaded] = useState<boolean>(false);
   const state = useLocation().state as Book;
 
   const handleQuantityChange = (e) => {
     let currentQuantity = e.target.value;
     setQuantity(currentQuantity);
   };
-  console.log(state);
-  console.log(quantity);
+
+  const skeletonTimer = () => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 2000);
+  };
+  useEffect(() => {
+    return skeletonTimer();
+  }, []);
+  // console.log(state);
+  // console.log(quantity);
   return (
     <div className="product">
       <header className="product-header">
@@ -22,9 +34,23 @@ const Product = () => {
         </h1>
       </header>
       <main className="product-container">
-        <h3 className="product-title">{state.name}</h3>
+        {loaded ? (
+          <h3 className="product-title">{state.name}</h3>
+        ) : (
+          <h3 className="product-title">
+            <Skeleton />
+          </h3>
+        )}
         <div className="product-exact">
-          <img className="product-image" src={state.img_URL} alt="book_image" />
+          {loaded ? (
+            <div className="product-image">
+              <img src={state.img_URL} alt="book_image" />
+            </div>
+          ) : (
+            <div style={{ width: "150px" }} className="product-image">
+              <Skeleton height={200} />
+            </div>
+          )}
           <div className="product-exact-detail">
             <p id="product-price">
               Qty.{" "}
@@ -48,9 +74,15 @@ const Product = () => {
             </p>
             <div>
               <h4>Price</h4>
-              <p id="product-price">
-                Rs. {quantity < 2 ? state.price : state.price * quantity}. 00
-              </p>
+              {loaded ? (
+                <p id="product-price">
+                  Rs. {quantity < 2 ? state.price : state.price * quantity}. 00
+                </p>
+              ) : (
+                <span className="product-price">
+                  <Skeleton />
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -58,7 +90,13 @@ const Product = () => {
           <header className="product-description-header">
             <h2>Description</h2>
           </header>
-          <p style={{ padding: "0 1rem" }}>{state.description}</p>
+          {loaded ? (
+            <p style={{ padding: "0 1rem" }}>{state.description}</p>
+          ) : (
+            <p style={{ padding: "0 1rem" }}>
+              <Skeleton count={4} />
+            </p>
+          )}
           <span id="button-center">
             <button className="product-button">Proceed to pay</button>
           </span>
