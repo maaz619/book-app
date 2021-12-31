@@ -14,7 +14,7 @@ const App: React.FC = (): JSX.Element => {
   const myData = { ...books };
 
   const skeletonTimer = () => {
-    setTimeout(() => setLoaded(true), 3000);
+    setTimeout(() => setLoaded(true), 1000);
   };
 
   // const stateToProps = (bookDetails) => {

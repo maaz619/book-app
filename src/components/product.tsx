@@ -1,12 +1,14 @@
 // import { Link } from "react-router-dom"
 import "./styles/product.css";
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import React from "react";
 import { Book } from "../../interfaces";
 import Address from "./address";
 import Skeleton from "react-loading-skeleton";
+import Modal from "./modal";
 const Product = () => {
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const [quantity, setQuantity] = useState(1);
   const [loaded, setLoaded] = useState<boolean>(false);
   const state = useLocation().state as Book;
@@ -19,7 +21,7 @@ const Product = () => {
   const skeletonTimer = () => {
     setTimeout(() => {
       setLoaded(true);
-    }, 2000);
+    }, 1000);
   };
   useEffect(() => {
     return skeletonTimer();
@@ -27,82 +29,91 @@ const Product = () => {
   // console.log(state);
   // console.log(quantity);
   return (
-    <div className="product">
-      <header className="product-header">
-        <h1>
-          Purchase <span id="product-head-style">details</span>
-        </h1>
-      </header>
-      <main className="product-container">
-        {loaded ? (
-          <h3 className="product-title">{state.name}</h3>
-        ) : (
-          <h3 className="product-title">
-            <Skeleton />
-          </h3>
-        )}
-        <div className="product-exact">
+    <Fragment>
+      {openModal && <Modal closeModal={setOpenModal} />}
+      <div className="product">
+        <header className="product-header">
+          <h1>
+            Purchase <span id="product-head-style">details</span>
+          </h1>
+        </header>
+        <main className="product-container">
           {loaded ? (
-            <div className="product-image">
-              <img src={state.img_URL} alt="book_image" />
-            </div>
+            <h3 className="product-title">{state.name}</h3>
           ) : (
-            <div style={{ width: "150px" }} className="product-image">
-              <Skeleton height={200} />
-            </div>
+            <h3 className="product-title">
+              <Skeleton />
+            </h3>
           )}
-          <div className="product-exact-detail">
-            <p id="product-price">
-              Qty.{" "}
-              <select
-                onChange={(e) => handleQuantityChange(e)}
-                name="Quantity"
-                id="product-quantity"
-              >
-                {[1, 2, 3, 4, 5].map((i, k) => {
-                  return (
-                    <option
-                      value={i}
-                      className="product-quantity-option"
-                      key={k}
-                    >
-                      {i}
-                    </option>
-                  );
-                })}
-              </select>
-            </p>
-            <div>
-              <h4>Price</h4>
-              {loaded ? (
-                <p id="product-price">
-                  Rs. {quantity < 2 ? state.price : state.price * quantity}. 00
-                </p>
-              ) : (
-                <span className="product-price">
-                  <Skeleton />
-                </span>
-              )}
+          <div className="product-exact">
+            {loaded ? (
+              <div className="product-image">
+                <img src={state.img_URL} alt="book_image" />
+              </div>
+            ) : (
+              <div style={{ width: "150px" }} className="product-image">
+                <Skeleton height={200} />
+              </div>
+            )}
+            <div className="product-exact-detail">
+              <p id="product-price">
+                Qty.{" "}
+                <select
+                  onChange={(e) => handleQuantityChange(e)}
+                  name="Quantity"
+                  id="product-quantity"
+                >
+                  {[1, 2, 3, 4, 5].map((i, k) => {
+                    return (
+                      <option
+                        value={i}
+                        className="product-quantity-option"
+                        key={k}
+                      >
+                        {i}
+                      </option>
+                    );
+                  })}
+                </select>
+              </p>
+              <div>
+                <h4>Price</h4>
+                {loaded ? (
+                  <p id="product-price">
+                    Rs. {quantity < 2 ? state.price : state.price * quantity}.
+                    00
+                  </p>
+                ) : (
+                  <span className="product-price">
+                    <Skeleton />
+                  </span>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-        <section className="product-description">
-          <header className="product-description-header">
-            <h2>Description</h2>
-          </header>
-          {loaded ? (
-            <p style={{ padding: "0 1rem" }}>{state.description}</p>
-          ) : (
-            <p style={{ padding: "0 1rem" }}>
-              <Skeleton count={4} />
-            </p>
-          )}
-          <span id="button-center">
-            <button className="product-button">Proceed to pay</button>
-          </span>
-        </section>
-      </main>
-    </div>
+          <section className="product-description">
+            <header className="product-description-header">
+              <h2>Description</h2>
+            </header>
+            {loaded ? (
+              <p style={{ padding: "0 1rem" }}>{state.description}</p>
+            ) : (
+              <p style={{ padding: "0 1rem" }}>
+                <Skeleton count={4} />
+              </p>
+            )}
+            <span id="button-center">
+              <button
+                onClick={() => setOpenModal(true)}
+                className="product-button"
+              >
+                Proceed
+              </button>
+            </span>
+          </section>
+        </main>
+      </div>
+    </Fragment>
   );
 };
 export default Product;
