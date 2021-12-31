@@ -1,0 +1,35 @@
+.address-container{
+    display: flex;
+    flex-direction: column;
+
+}
+input{
+    outline-style: none;
+    outline: none;
+    padding: .5rem;
+    margin: 5px 0;
+}
+label{
+    width: fit-content;
+    padding: .5rem 0;
+}
+
+.btn{
+    cursor: pointer;
+    margin: 1.5rem auto;
+    padding: .5rem 1rem;
+    color: white;
+    background-color: var(--green-custom);
+    outline: none;
+    outline-style: none;
+    border: none;
+    border-radius: 5px;
+}
+input:focus{
+   box-shadow: 0 0 5px 1px rgb(65, 214, 255);
+    
+}
+input:hover{
+    outline-color: !important;
+    border-color: !important;
+}

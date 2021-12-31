@@ -1,0 +1,32 @@
+.modal{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(200, 200, 200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 100%;
+}
+.modal-container{
+    border-radius: 1rem;
+    background-color: white;
+    max-width: 500px;
+    min-width: 350px;
+    padding: 2rem;
+    opacity: 100%;
+}
+.modal-close-right{
+    width: 100%;
+    text-align: right;
+
+}
+.modal-close-button{
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: none;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    outline-style: none;
+}
