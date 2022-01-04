@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import { useState, useEffect, Fragment } from "react";
 import React from "react";
 import { Book } from "../../interfaces";
-import Address from "./address";
 import Skeleton from "react-loading-skeleton";
 import Modal from "./modal";
 const Product = () => {

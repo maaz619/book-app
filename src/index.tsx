@@ -4,8 +4,6 @@ import "./index.css";
 import App from "./App";
 import Product from "./components/product";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 ReactDOM.render(
   <Router>
