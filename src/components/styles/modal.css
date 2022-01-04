@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     position: fixed;
-    background-color: rgba(200, 200, 200);
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;

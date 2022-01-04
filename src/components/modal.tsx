@@ -4,8 +4,13 @@ import "./styles/modal.css";
 
 const Modal = ({ closeModal }) => {
   return (
-    <div className="modal">
-      <div className="modal-container">
+    <div onClick={() => closeModal(false)} className="modal">
+      <div
+        onClick={(e: React.BaseSyntheticEvent) => {
+          e.stopPropagation();
+        }}
+        className="modal-container"
+      >
         <div className="modal-close-right">
           <button
             onClick={() => closeModal(false)}

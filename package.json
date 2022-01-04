@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^17.0.38"
+    "@types/react": "^17.0.38",
+    "css-minimizer-webpack-plugin": "^3.3.1"
   }
 }
