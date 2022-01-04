@@ -27,6 +27,6 @@ label{
 }
 input:focus{
       outline: none !important;
-    border-color: #29baf8;
+    border-color: #29acee;
     box-shadow: 0 0 5px #29acee;
 }
