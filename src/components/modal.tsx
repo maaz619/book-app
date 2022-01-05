@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { relative } from "path/posix";
 import Address from "./address";
 import "./styles/modal.css";
 import Lottie from "react-lottie-player";
@@ -31,13 +30,17 @@ const Modal = ({ closeModal, modal }) => {
             <div
               style={{
                 display: "flex",
+                flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: "1.5em",
+                fontWeight: "550",
               }}
             >
-              {"Order "}
-              <span style={{ color: "#15803d" }}> Placed</span>
+              <span>Thank you</span>
+              <div style={{ paddingTop: ".5rem" }}>
+                Order <span style={{ color: "#15803d" }}>Placed</span>
+              </div>
             </div>
           </div>
         )}
