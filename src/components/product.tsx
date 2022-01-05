@@ -29,7 +29,7 @@ const Product = () => {
   // console.log(quantity);
   return (
     <Fragment>
-      {openModal && <Modal closeModal={setOpenModal} />}
+      {openModal && <Modal closeModal={setOpenModal} modal={openModal} />}
       <div className="product">
         <header className="product-header">
           <h1>

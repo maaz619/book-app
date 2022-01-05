@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { relative } from "path/posix";
 import Address from "./address";
 import "./styles/modal.css";
+import Lottie from "react-lottie-player";
+import animationData from "../Lottie_files/order.json";
 
-const Modal = ({ closeModal }) => {
+const Modal = ({ closeModal, modal }) => {
+  const [open, setOpen] = useState<boolean>(modal);
   return (
     <div onClick={() => closeModal(false)} className="modal">
       <div
@@ -19,7 +23,24 @@ const Modal = ({ closeModal }) => {
             X
           </button>
         </div>
-        <Address />
+        {open ? (
+          <Address closeModal1={setOpen} open={open} />
+        ) : (
+          <div>
+            <Lottie play loop={2} animationData={animationData} />
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1.5em",
+              }}
+            >
+              {"Order "}
+              <span style={{ color: "#15803d" }}> Placed</span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,17 +1,32 @@
 import React from "react";
 import "./styles/address.css";
 
-const Address: React.FC = (): JSX.Element => {
+const Address = ({ closeModal1, open }): JSX.Element => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    closeModal1(false);
     console.log("hello");
   };
+  // interface displayType {
+  //   display1: string;
+  //   display2: string;
+  // }
+
+  // const [animationDisplay, setAnimationDisplay] = useState<displayType>();
+
+  // let display = "block";
+  console.log(open);
+
   return (
     <div className="address">
       <header>
         <h2>Address</h2>
       </header>
-      <form onSubmit={(e) => handleSubmit(e)} action="submit">
+      <form
+        style={{ height: "100%", display: "block" }}
+        onSubmit={(e) => handleSubmit(e)}
+        action="submit"
+      >
         <div className="address-container">
           <label htmlFor="name">Full name</label>
           <input id="name" name="name" type="text" required />
