@@ -1,4 +1,5 @@
 // import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import "./styles/product.css";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect, Fragment } from "react";
@@ -6,7 +7,8 @@ import React from "react";
 import { Book } from "../../interfaces";
 import Skeleton from "react-loading-skeleton";
 import Modal from "./modal";
-const Product = () => {
+import { ReactComponent as Back } from "../images/back.svg";
+const Product: React.FC = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [quantity, setQuantity] = useState(1);
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -23,7 +25,8 @@ const Product = () => {
     }, 1000);
   };
   useEffect(() => {
-    return skeletonTimer();
+    skeletonTimer();
+    clearTimeout();
   }, []);
   // console.log(state);
   // console.log(quantity);
@@ -32,9 +35,12 @@ const Product = () => {
       {openModal && <Modal closeModal={setOpenModal} modal={openModal} />}
       <div className="product">
         <header className="product-header">
-          <h1>
+          <Link to="/">
+            <Back width={35} />
+          </Link>
+          <p>
             Purchase <span id="product-head-style">details</span>
-          </h1>
+          </p>
         </header>
         <main className="product-container">
           {loaded ? (

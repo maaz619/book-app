@@ -14,3 +14,4 @@ export const stephen = require("./stephen.jpg");
 export const brief = require("./brief.jpg");
 export const blackholes = require("./blackholes.jpg");
 export const unlock = require("./unlock.jpg");
+export const back = require("./back.svg");
