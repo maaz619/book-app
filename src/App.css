@@ -83,7 +83,7 @@ ul {
   position: fixed;
   right: 0;
   top: 1;
-  height: 35vh;
+  height: 25vh;
   background-color: rgb(66, 246, 129);
   width: 40vw;
   z-index: 999;
@@ -111,7 +111,7 @@ ul {
     position: fixed;
     right: 0;
     top: 1;
-    height: 35vh;
+    height: 30vh;
     background-color: rgb(66, 246, 129);
     width: 40vw;
     z-index: 999;
