@@ -6,6 +6,7 @@ import { Book } from "../interfaces";
 import React from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
+import { ReactComponent as Hamburger } from "./images/hamburger.svg";
 
 const App: React.FC = (): JSX.Element => {
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -33,6 +34,7 @@ const App: React.FC = (): JSX.Element => {
     setBookInfo([...books.Recommendations]);
     setBookType(Object.keys(books)[0]);
     // handlePropsData(propsData);
+    return clearTimeout();
   }, []);
   return (
     <div className="App">
@@ -40,6 +42,9 @@ const App: React.FC = (): JSX.Element => {
         <h1>
           Good <span className="header-text">read</span>
         </h1>
+        <div className="ham">
+          <Hamburger width={45} />
+        </div>
       </header>
 
       <main className="book-list-container">
