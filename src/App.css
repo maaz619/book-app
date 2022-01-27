@@ -1,8 +1,19 @@
 .App{
   text-align: center;
+  max-width: 500px;
+  margin: auto;
 }
 .App-header{
-  margin: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+.App-header>h1{
+  margin-left:1rem;
+}
+.ham{
+  margin-right: .5rem;
 }
 .header-text{
   color: var(--green-custom);
