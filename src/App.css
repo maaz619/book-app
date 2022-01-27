@@ -12,9 +12,6 @@
 .App-header>h1{
   margin-left:1rem;
 }
-.ham{
-  margin-right: .5rem;
-}
 .header-text{
   color: var(--green-custom);
 
@@ -81,4 +78,62 @@ ul {
   border-radius: .5rem;
   padding: .3rem;
   font-size: x-small;
+}
+.nav-close{
+  position: fixed;
+  right: 0;
+  top: 1;
+  height: 25vh;
+  background-color: rgb(66, 246, 129);
+  width: 40vw;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform .5s ease-in-out;
+}
+.nav-close>ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 3.5rem auto;
+  }
+.menu {
+    display: none;
+  }
+
+@media only screen and (max-width :550px){
+ 
+  .menu {
+    display: block;
+  }
+  .menu:hover{
+    cursor: pointer;
+  }
+  .nav-open{
+    position: fixed;
+    right: 0;
+    top: 1;
+    height: 30vh;
+    background-color: rgb(66, 246, 129);
+    width: 40vw;
+    z-index: 999;
+    transform: translateX(0%);
+  transition: transform .5s ease-in-out;
+
+  }
+  .nav-open>ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 3.5rem auto;
+  }
+  .close {
+    float: right;
+    margin: 1rem 1rem;
+    cursor: pointer;
+  }
+  a {
+    color: black;
+    padding: .6rem;
+    display: block;
+    font-size: 1.25rem;
+    user-select: none;
+  }
 }
