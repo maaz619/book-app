@@ -7,11 +7,14 @@ import React from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
 import { ReactComponent as Hamburger } from "./images/hamburger.svg";
+import { ReactComponent as Close } from "./images/close.svg";
+import { back } from "images";
 
 const App: React.FC = (): JSX.Element => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [bookInfo, setBookInfo] = useState<Book[]>([]);
   const [bookType, setBookType] = useState<string>();
+  const [navState, setNavState] = useState<boolean>(false);
   const myData = { ...books };
 
   const skeletonTimer = () => {
@@ -43,7 +46,27 @@ const App: React.FC = (): JSX.Element => {
           Good <span className="header-text">read</span>
         </h1>
         <div className="ham">
-          <Hamburger width={45} />
+          <nav className={navState ? "nav-open" : "nav-close"}>
+            <Close
+              onClick={() => setNavState(false)}
+              className="close"
+              width={30}
+            />
+            <ul>
+              <li>
+                <Link to="">Home</Link>
+              </li>
+              <li>
+                <Link to="">Orders</Link>
+              </li>
+              <li>
+                <Link to="">Login</Link>
+              </li>
+            </ul>
+          </nav>
+          <div onClick={() => setNavState(true)} className="menu">
+            <Hamburger width={45} />
+          </div>
         </div>
       </header>
 
