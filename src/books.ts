@@ -16,7 +16,7 @@ import {
   brief,
   blackholes,
 } from "./images/index";
-import { Books } from "../interfaces";
+import { Books } from "./interfaces";
 export const books: Books = {
   Recommendations: [
     {
