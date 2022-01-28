@@ -3,8 +3,9 @@ import Address from "./address";
 import "./styles/modal.css";
 import Lottie from "react-lottie-player";
 import animationData from "../Lottie_files/order.json";
+import { Props } from "../interfaces";
 
-const Modal = ({ closeModal, modal }) => {
+const Modal: React.FC<Props> = ({ closeModal, modal }) => {
   const [open, setOpen] = useState<boolean>(modal);
   return (
     <div onClick={() => closeModal(false)} className="modal">

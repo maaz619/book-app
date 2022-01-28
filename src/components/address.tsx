@@ -1,7 +1,11 @@
-import React from "react";
+import React, { Dispatch } from "react";
 import "./styles/address.css";
+import { AddressProps } from "../interfaces";
 
-const Address = ({ closeModal1, open }): JSX.Element => {
+const Address: React.FC<AddressProps> = ({
+  closeModal1,
+  open,
+}): JSX.Element => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     closeModal1(false);

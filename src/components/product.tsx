@@ -2,9 +2,9 @@
 import { Link } from "react-router-dom";
 import "./styles/product.css";
 import { useLocation } from "react-router-dom";
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment, SelectHTMLAttributes } from "react";
 import React from "react";
-import { Book } from "../../interfaces";
+import { Book } from "../interfaces";
 import Skeleton from "react-loading-skeleton";
 import Modal from "./modal";
 import { ReactComponent as Back } from "../images/back.svg";
@@ -14,9 +14,9 @@ const Product: React.FC = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const state = useLocation().state as Book;
 
-  const handleQuantityChange = (e) => {
-    let currentQuantity = e.target.value;
-    setQuantity(currentQuantity);
+  const handleQuantityChange = (e: React.FormEvent<HTMLSelectElement>) => {
+    let currentQuantity = e.currentTarget.value as any;
+    setQuantity(Number(currentQuantity));
   };
 
   const skeletonTimer = () => {

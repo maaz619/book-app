@@ -21,3 +21,11 @@ export interface Books {
   Science: Book[];
   Fiction: Book[];
 }
+export interface Props {
+  closeModal: React.Dispatch<React.SetStateAction<boolean>>;
+  modal: boolean;
+}
+export interface AddressProps {
+  closeModal1: React.Dispatch<React.SetStateAction<boolean>>;
+  open: boolean;
+}

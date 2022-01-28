@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./App.css";
 import { books } from "./books";
 import { useState, useEffect } from "react";
-import { Book } from "../interfaces";
+import { Book } from "./interfaces";
 import React from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
@@ -50,7 +50,7 @@ const App: React.FC = (): JSX.Element => {
             <Close
               onClick={() => setNavState(false)}
               className="close"
-              width={30}
+              width={25}
             />
             <ul>
               <li>
