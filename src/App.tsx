@@ -57,10 +57,10 @@ const App: React.FC = (): JSX.Element => {
                 <Link to="">Home</Link>
               </li>
               <li>
-                <Link to="">Orders</Link>
+                <Link to="/order">Orders</Link>
               </li>
               <li>
-                <Link to="">Login</Link>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
           </nav>
