@@ -7,6 +7,7 @@ import React from "react";
 import { Book } from "../interfaces";
 import Skeleton from "react-loading-skeleton";
 import Modal from "./modal";
+import Address from "./address";
 import { ReactComponent as Back } from "../images/back.svg";
 const Product: React.FC = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
