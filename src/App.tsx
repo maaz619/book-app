@@ -8,7 +8,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
 import { ReactComponent as Hamburger } from "./images/hamburger.svg";
 import { ReactComponent as Close } from "./images/close.svg";
-import { back } from "images";
 
 const App: React.FC = (): JSX.Element => {
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -20,11 +19,6 @@ const App: React.FC = (): JSX.Element => {
   const skeletonTimer = () => {
     setTimeout(() => setLoaded(true), 1000);
   };
-
-  // const stateToProps = (bookDetails) => {
-  //   <Product newData={bookDetails} />;
-  //   console.log(bookInfo);
-  // };
 
   const clickHandler = (type: string) => {
     setBookInfo([...myData[type]]);
@@ -40,13 +34,21 @@ const App: React.FC = (): JSX.Element => {
     return clearTimeout();
   }, []);
   return (
-    <div className="App">
+    <div
+      className="App"
+      onClick={() => {
+        setNavState(false);
+      }}
+    >
       <header className="App-header">
         <h1>
           Good <span className="header-text">read</span>
         </h1>
-        <div className="ham">
-          <nav className={navState ? "nav-open" : "nav-close"}>
+        <div
+          onClick={(e: React.BaseSyntheticEvent) => e.stopPropagation()}
+          className="ham"
+        >
+          <nav className={navState ? "nav-open" : " nav-close"}>
             <Close
               onClick={() => setNavState(false)}
               className="close"

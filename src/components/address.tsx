@@ -1,25 +1,13 @@
-import React, { Dispatch } from "react";
+import React from "react";
 import "./styles/address.css";
 import { AddressProps } from "../interfaces";
 
-const Address: React.FC<AddressProps> = ({
-  closeModal1,
-  open,
-}): JSX.Element => {
+const Address: React.FC<AddressProps> = ({ closeModal1 }): JSX.Element => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     closeModal1(false);
     console.log("hello");
   };
-  // interface displayType {
-  //   display1: string;
-  //   display2: string;
-  // }
-
-  // const [animationDisplay, setAnimationDisplay] = useState<displayType>();
-
-  // let display = "block";
-  console.log(open);
 
   return (
     <div className="address">

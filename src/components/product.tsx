@@ -2,13 +2,13 @@
 import { Link } from "react-router-dom";
 import "./styles/product.css";
 import { useLocation } from "react-router-dom";
-import { useState, useEffect, Fragment, SelectHTMLAttributes } from "react";
+import { useState, useEffect, Fragment } from "react";
 import React from "react";
 import { Book } from "../interfaces";
 import Skeleton from "react-loading-skeleton";
 import Modal from "./modal";
-import Address from "./address";
 import { ReactComponent as Back } from "../images/back.svg";
+
 const Product: React.FC = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [quantity, setQuantity] = useState(1);
@@ -37,7 +37,7 @@ const Product: React.FC = () => {
       <div className="product">
         <header className="product-header">
           <Link to="/">
-            <Back width={35} />
+            <Back width={30} />
           </Link>
           <p>
             Purchase <span id="product-head-style">details</span>
