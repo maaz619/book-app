@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./App.css";
 import { books } from "./books";
 import { useState, useEffect } from "react";
@@ -15,6 +15,7 @@ const App: React.FC = (): JSX.Element => {
   const [bookType, setBookType] = useState<string>();
   const [navState, setNavState] = useState<boolean>(false);
   const myData = { ...books };
+  const state: any = useLocation().state;
 
   const skeletonTimer = () => {
     setTimeout(() => setLoaded(true), 1000);
@@ -62,7 +63,7 @@ const App: React.FC = (): JSX.Element => {
                 <Link to="/order">Orders</Link>
               </li>
               <li>
-                <Link to="/login">Login</Link>
+                <Link to="/login">{state ? state : "Login"}</Link>
               </li>
             </ul>
           </nav>

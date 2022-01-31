@@ -180,10 +180,9 @@ ul {
   .close {
       display: none;
     }
-  a{
-    color: black;
+  li{
     margin: 1rem;
-
   }
+  a{color: black;}
   .nav-close>ul>li{}
 }

@@ -1,0 +1,22 @@
+.Login{
+    max-width: 500px;
+    margin: auto;
+}
+.form-container{
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    flex-direction: column;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+button{
+    margin: 1rem;
+}
+a{
+    margin: 0;
+}
