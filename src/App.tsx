@@ -1,8 +1,8 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./App.css";
 import { books } from "./books";
 import { useState, useEffect } from "react";
-import { Book } from "./interfaces";
+import { Book, User } from "./interfaces";
 import React from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
@@ -10,12 +10,15 @@ import { ReactComponent as Hamburger } from "./images/hamburger.svg";
 import { ReactComponent as Close } from "./images/close.svg";
 
 const App: React.FC = (): JSX.Element => {
+  const [userData, setUserData] = useState<User>({
+    userName: "Hello user",
+    profilePhoto: "",
+  });
   const [loaded, setLoaded] = useState<boolean>(false);
   const [bookInfo, setBookInfo] = useState<Book[]>([]);
   const [bookType, setBookType] = useState<string>();
   const [navState, setNavState] = useState<boolean>(false);
   const myData = { ...books };
-  const state: any = useLocation().state;
 
   const skeletonTimer = () => {
     setTimeout(() => setLoaded(true), 1000);
@@ -63,7 +66,9 @@ const App: React.FC = (): JSX.Element => {
                 <Link to="/order">Orders</Link>
               </li>
               <li>
-                <Link to="/login">{state ? state : "Login"}</Link>
+                <Link to="/login" state={{ userData, setUserData }}>
+                  {userData.userName ? userData.userName : "Login "}
+                </Link>
               </li>
             </ul>
           </nav>

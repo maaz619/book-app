@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../styles/login.css";
 import {
   auth,
@@ -7,26 +7,40 @@ import {
   logInWithEmailAndPassword,
   logout,
 } from "../../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { User } from "../../interfaces";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+  const state = useLocation().state as User;
   const navigate = useNavigate();
-  console.log(email, password);
+
+  const signInWithEmail = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password).then((res) => {
+      navigate("/");
+    });
+  };
+
   useEffect(() => {
-    if (user) {
-      console.log(user.displayName);
-    }
-    if (!user) return navigate("/login");
+    try {
+      if (user) {
+        console.log(user.displayName);
+      } else {
+        console.log(state.userName);
+        navigate("/login");
+      }
+    } catch {}
   }, [user, loading]);
   return (
     <div className="Login">
-      <form className="form" action="submit">
+      <form className="form">
         <div className="form-container">
           <label htmlFor="Email">Email</label>
           <input
+            required
             onChange={(e) => setEmail(e.currentTarget.value)}
             type="email"
             name="email"
@@ -35,6 +49,7 @@ const Login = () => {
           />
           <label htmlFor="Password">Password</label>
           <input
+            required
             onChange={(e) => setPassword(e.currentTarget.value)}
             value={password}
             type="password"
@@ -42,13 +57,7 @@ const Login = () => {
             id="Password"
           />
         </div>
-        <button
-          onClick={() => logInWithEmailAndPassword(email, password)}
-          style={{ padding: ".2em" }}
-        >
-          sign in
-        </button>
-        <Link to={user ? "/" : ""} state={user?.displayName}>
+        {/* <Link to="" state={user?.displayName}>
           <button
             onClick={signInWithGoogle}
             style={{
@@ -62,11 +71,34 @@ const Login = () => {
           >
             sign in with google
           </button>
-        </Link>
-        <button onClick={logout}>sign out</button>
-
-        <Link to="/">Go Back</Link>
+        </Link> */}
       </form>
+      <button
+        onClick={() => signInWithEmail(email, password)}
+        style={{
+          padding: ".7em",
+          backgroundColor: "#1a73e8",
+          color: "white",
+          border: "none",
+          borderRadius: ".5em",
+          width: "9rem",
+        }}
+      >
+        sign in
+      </button>
+      {/* <button
+        style={{
+          padding: ".7em",
+          backgroundColor: "#1a73e8",
+          color: "white",
+          border: "none",
+          borderRadius: ".5em",
+          width: "9rem",
+        }}
+        onClick={logout}
+      >
+        sign out
+      </button> */}
     </div>
   );
 };
