@@ -10,15 +10,17 @@ import {
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { User } from "../../interfaces";
 import { useAuthState } from "react-firebase-hooks/auth";
-
+interface UserInput {
+  name: string;
+  email: string;
+}
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [user, loading] = useAuthState(auth);
-  const state = useLocation().state as User;
   const navigate = useNavigate();
 
-  const signInWithEmail = async (email, password) => {
+  const signInWithEmail = async (email: string, password: string) => {
     await signInWithEmailAndPassword(auth, email, password).then((res) => {
       navigate("/");
     });
@@ -28,9 +30,6 @@ const Login = () => {
     try {
       if (user) {
         console.log(user.displayName);
-      } else {
-        console.log(state.userName);
-        navigate("/login");
       }
     } catch {}
   }, [user, loading]);
