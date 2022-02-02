@@ -29,3 +29,7 @@ export interface AddressProps {
   closeModal1: React.Dispatch<React.SetStateAction<boolean>>;
   open: boolean;
 }
+export interface User {
+  userName: string;
+  profilePhoto: string;
+}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./App.css";
 import { books } from "./books";
 import { useState, useEffect } from "react";
-import { Book } from "./interfaces";
+import { Book, User } from "./interfaces";
 import React from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
@@ -10,6 +10,10 @@ import { ReactComponent as Hamburger } from "./images/hamburger.svg";
 import { ReactComponent as Close } from "./images/close.svg";
 
 const App: React.FC = (): JSX.Element => {
+  const [userData, setUserData] = useState<User>({
+    userName: "Hello user",
+    profilePhoto: "",
+  });
   const [loaded, setLoaded] = useState<boolean>(false);
   const [bookInfo, setBookInfo] = useState<Book[]>([]);
   const [bookType, setBookType] = useState<string>();
@@ -62,7 +66,9 @@ const App: React.FC = (): JSX.Element => {
                 <Link to="/order">Orders</Link>
               </li>
               <li>
-                <Link to="/login">Login</Link>
+                <Link to="/login" state={{ userData, setUserData }}>
+                  {userData.userName ? userData.userName : "Login "}
+                </Link>
               </li>
             </ul>
           </nav>
