@@ -66,9 +66,7 @@ const App: React.FC = (): JSX.Element => {
                 <Link to="/order">Orders</Link>
               </li>
               <li>
-                <Link to="/login" state={{ userData, setUserData }}>
-                  {userData.userName ? userData.userName : "Login "}
-                </Link>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
           </nav>
