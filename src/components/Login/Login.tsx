@@ -9,7 +9,7 @@ interface UserInput {
   name: string;
   email: string;
 }
-const Login = () => {
+const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [user, loading] = useAuthState(auth);
