@@ -10,10 +10,10 @@ import { ReactComponent as Hamburger } from "./images/hamburger.svg";
 import { ReactComponent as Close } from "./images/close.svg";
 
 const App: React.FC = (): JSX.Element => {
-  const [userData, setUserData] = useState<User>({
-    userName: "Hello user",
-    profilePhoto: "",
-  });
+  // const [userData, setUserData] = useState<User>({
+  //   userName: "Hello user",
+  //   profilePhoto: "",
+  // });
   const [loaded, setLoaded] = useState<boolean>(false);
   const [bookInfo, setBookInfo] = useState<Book[]>([]);
   const [bookType, setBookType] = useState<string>();
