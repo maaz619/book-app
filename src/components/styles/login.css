@@ -1,22 +1,29 @@
-.Login{
-    max-width: 500px;
-    margin: auto;text-align: center;
+.container {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
 }
-.form-container{
-    display: flex;
-    width: fit-content;
-    justify-content: center;
-    flex-direction: column;
+.form-container {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-.form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.form {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
 }
-button{
-    margin: 1rem;
+.LS-button {
+  margin: 1rem;
+  padding: 0.7em;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  width: 9rem;
 }
-a{
-    margin: 0;
+a {
+  margin: 0;
 }
