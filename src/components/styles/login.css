@@ -18,7 +18,7 @@
 .LS-button {
   margin: 1rem;
   padding: 0.7em;
-  background-color: #1a73e8;
+  background-color: var(--green-custom);
   color: white;
   border: none;
   border-radius: 0.5em;
@@ -26,4 +26,15 @@
 }
 a {
   margin: 0;
+}
+.clr-login {
+  color: var(--green-custom);
+  font-weight: 600;
+}
+.spinner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

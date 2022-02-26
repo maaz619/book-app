@@ -8,6 +8,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
 import { ReactComponent as Hamburger } from "../images/hamburger.svg";
 import { ReactComponent as Close } from "../images/close.svg";
+import { useAuth } from "Contexts/AuthContext";
 
 const Home: React.FC = (): JSX.Element => {
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -15,6 +16,7 @@ const Home: React.FC = (): JSX.Element => {
   const [bookType, setBookType] = useState<string>();
   const [navState, setNavState] = useState<boolean>(false);
   const myData = { ...books };
+  const context = useAuth();
 
   const skeletonTimer = () => {
     setTimeout(() => setLoaded(true), 1000);
@@ -32,7 +34,7 @@ const Home: React.FC = (): JSX.Element => {
     setBookType(Object.keys(books)[0]);
     // handlePropsData(propsData);
     return clearTimeout();
-  }, []);
+  }, [context?.currentUser]);
   return (
     <div
       className="App"
@@ -62,7 +64,13 @@ const Home: React.FC = (): JSX.Element => {
                 <Link to="/order">Orders</Link>
               </li>
               <li>
-                <Link to="/signup">Sign up</Link>
+                {context?.currentUser?.email ? (
+                  <Link onClick={context.signout} to={""}>
+                    Logout
+                  </Link>
+                ) : (
+                  <Link to="/signup">Sign up</Link>
+                )}
               </li>
             </ul>
           </nav>
