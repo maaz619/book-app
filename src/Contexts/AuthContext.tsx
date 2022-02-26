@@ -5,7 +5,7 @@ import {
   signOut,
   User,
 } from "firebase/auth";
-import { LoginType } from "interfaces";
+import { LoginType } from "../interfaces";
 import { auth } from "../firebase";
 
 type UserType = User | null;

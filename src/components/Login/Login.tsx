@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/login.css";
-import { useAuth } from "Contexts/AuthContext";
+import { useAuth } from "../../Contexts/AuthContext";
 import { Oval } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
 
