@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import "./App.css";
-import { books } from "./books";
+import "../App.css";
+import { books } from "../books";
 import { useState, useEffect } from "react";
-import { Book } from "./interfaces";
+import { Book } from "../interfaces";
 import React from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
-import { ReactComponent as Hamburger } from "./images/hamburger.svg";
-import { ReactComponent as Close } from "./images/close.svg";
+import { ReactComponent as Hamburger } from "../images/hamburger.svg";
+import { ReactComponent as Close } from "../images/close.svg";
 import { useAuth } from "Contexts/AuthContext";
 
 const Home: React.FC = (): JSX.Element => {
