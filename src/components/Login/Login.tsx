@@ -17,7 +17,8 @@ const Login: React.FC = () => {
       await context?.login({ email, password });
       navigate("/");
     } catch (err) {
-      console.log("fail to create an account", err);
+      alert(err);
+      setLoading(true);
     }
   };
   useEffect(() => {}, [context?.currentUser]);

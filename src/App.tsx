@@ -1,11 +1,11 @@
-import Home from "./Components/Home";
-import Login from "Components/Login/Login";
-import Order from "Components/Order";
-import Product from "Components/Product";
+import Home from "components/Home";
+import Login from "components/Login/Login";
+import Order from "components/Order";
+import Product from "components/Product";
 import { AuthProvider } from "Contexts/AuthContext";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import SignUp from "Components/Login/Signup";
+import SignUp from "components/Login/Signup";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const App = () => {
