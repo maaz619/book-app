@@ -33,3 +33,14 @@ export interface User {
   userName: string;
   profilePhoto: string;
 }
+
+export interface LoginType {
+  email: string;
+  password: string;
+}
+export interface SignupType {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}

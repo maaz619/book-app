@@ -1,104 +1,74 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../styles/login.css";
-import {
-  auth,
-  signInWithGoogle,
-  logInWithEmailAndPassword,
-  logout,
-} from "../../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { User } from "../../interfaces";
-import { useAuthState } from "react-firebase-hooks/auth";
-interface UserInput {
-  name: string;
-  email: string;
-}
-const Login = () => {
+import { useAuth } from "../../Contexts/AuthContext";
+import { Oval } from "react-loader-spinner";
+import { Link, useNavigate } from "react-router-dom";
+
+const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [user, loading] = useAuthState(auth);
+  const [loading, setLoading] = useState<boolean>(true);
+  const context = useAuth();
   const navigate = useNavigate();
-
-  const signInWithEmail = async (email: string, password: string) => {
-    await signInWithEmailAndPassword(auth, email, password).then((res) => {
-      navigate("/");
-    });
-  };
-
-  useEffect(() => {
+  const handleLogin = async (e: React.BaseSyntheticEvent) => {
+    e.preventDefault();
     try {
-      if (user) {
-        console.log(user.displayName);
-      }
-    } catch {}
-  }, [user, loading]);
+      setLoading(false);
+      await context?.login({ email, password });
+      navigate("/");
+    } catch (err) {
+      alert(err);
+      setLoading(true);
+    }
+  };
+  useEffect(() => {}, [context?.currentUser]);
+
   return (
-    <div className="Login">
-      <form className="form">
-        <div className="form-container">
-          <label htmlFor="Email">Email</label>
-          <input
-            required
-            onChange={(e) => setEmail(e.currentTarget.value)}
-            type="email"
-            name="email"
-            value={email}
-            id="Email"
-          />
-          <label htmlFor="Password">Password</label>
-          <input
-            required
-            onChange={(e) => setPassword(e.currentTarget.value)}
-            value={password}
-            type="password"
-            name="password"
-            id="Password"
-          />
+    <>
+      {loading ? (
+        context?.currentUser?.email ? (
+          <div className="spinner" style={{ fontSize: "4rem" }}>
+            You're already logged in
+          </div>
+        ) : (
+          <div className="container">
+            <form onSubmit={handleLogin} className="form">
+              <div className="form-container">
+                <label htmlFor="Email">Email</label>
+                <input
+                  required
+                  onChange={(e) => setEmail(e.currentTarget.value)}
+                  type="email"
+                  name="email"
+                  value={email}
+                  id="Email"
+                />
+                <label htmlFor="Password">Password</label>
+                <input
+                  required
+                  onChange={(e) => setPassword(e.currentTarget.value)}
+                  value={password}
+                  type="password"
+                  name="password"
+                  id="Password"
+                />
+              </div>
+              <button className="LS-button">Sign in</button>
+            </form>
+            <span className="relogin">
+              Don't have an accout?{" "}
+              <Link to="/signup">
+                <span className="clr-login">Sign Up</span>
+              </Link>
+            </span>
+          </div>
+        )
+      ) : (
+        <div className="spinner">
+          <Oval color="#00BFFF" height={80} width={80} />
         </div>
-        {/* <Link to="" state={user?.displayName}>
-          <button
-            onClick={signInWithGoogle}
-            style={{
-              padding: ".7em",
-              backgroundColor: "#1a73e8",
-              color: "white",
-              border: "none",
-              borderRadius: ".5em",
-              width: "9rem",
-            }}
-          >
-            sign in with google
-          </button>
-        </Link> */}
-      </form>
-      <button
-        onClick={() => signInWithEmail(email, password)}
-        style={{
-          padding: ".7em",
-          backgroundColor: "#1a73e8",
-          color: "white",
-          border: "none",
-          borderRadius: ".5em",
-          width: "9rem",
-        }}
-      >
-        sign in
-      </button>
-      {/* <button
-        style={{
-          padding: ".7em",
-          backgroundColor: "#1a73e8",
-          color: "white",
-          border: "none",
-          borderRadius: ".5em",
-          width: "9rem",
-        }}
-        onClick={logout}
-      >
-        sign out
-      </button> */}
-    </div>
+      )}
+    </>
   );
 };
 
